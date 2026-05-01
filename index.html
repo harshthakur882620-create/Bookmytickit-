@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book My Ticket</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0f172a;color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#020617}
+header h1{color:#ff3b3b}
+nav a{color:#fff;margin:0 10px;text-decoration:none}
+.hero{height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05');background-size:cover}
+.hero h2{font-size:45px}
+.section{padding:50px;text-align:center}
+.booking{background:#fff;color:#000;padding:20px;margin-top:-60px;width:85%;margin:auto;border-radius:10px}
+.booking input,button{padding:10px;margin:10px;border-radius:5px}
+button{background:#ff3b3b;color:#fff;border:none;cursor:pointer}
+.card{background:#1e293b;padding:20px;margin:10px;border-radius:10px}
+footer{background:#020617;padding:20px;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Book My Ticket</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Book Flights Easily ✈️</h2>
+</section>
+
+<div class="booking">
+<form onsubmit="searchFlights(event)">
+<input type="text" id="from" placeholder="From" required>
+<input type="text" id="to" placeholder="To" required>
+<input type="date" id="date" required>
+<button type="submit">Search</button>
+</form>
+</div>
+
+<div id="results" class="section"></div>
+
+<footer>
+<p>© 2026 Book My Ticket</p>
+</footer>
+
+<script>
+function searchFlights(e){
+ e.preventDefault();
+ let results=document.getElementById('results');
+ results.innerHTML=`
+ <div class='card'>IndiGo - ₹4500 <button onclick="alert('Booked')">Book</button></div>
+ <div class='card'>Air India - ₹5200 <button onclick="alert('Booked')">Book</button></div>`;
+}
+</script>
+
+</body>
+</html>
